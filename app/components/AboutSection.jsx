@@ -69,7 +69,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F1ECE8] py-20 px-8">
+    <div className="min-h-screen bg-[#F1ECE8] md:py-20 md:px-8 px-4 py-12 ">
       <div className="max-w-[1232px]  mx-auto">
         <div className="grid lg:grid-cols-2  gap-16 items-start">
           {/* Left Column - Text Content */}
@@ -97,7 +97,7 @@ const AboutSection = () => {
               capital, structure, and people you can count on.
             </p>
 
-            <div className="border-l-[4px] border-[#b66a3c] mt-[24px]  mb-16 w-[584px] ">
+            <div className="border-l-[4px] border-[#b66a3c] mt-[24px]  mb-16  ">
               <p className=" italic font-cormorant text-[22px] leading-[39px] text-[#1e1e1e]  pl-[28px]  ">
                 We're here for those who want to move further, faster, and not
                 alone.
