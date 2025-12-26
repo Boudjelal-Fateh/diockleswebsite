@@ -28,7 +28,7 @@ function NavBar() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-sm text-neutral-300 transition hover:text-white"
+              className="text-sm text-neutral-300 transition hover:text-[#B66A3C] font-montserrat"
             >
               {link.label}
             </Link>

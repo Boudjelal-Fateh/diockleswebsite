@@ -1,4 +1,6 @@
 import React from "react";
+import StateCard from "./StateCard";
+import Image from "next/image";
 
 function Hero() {
   return (
@@ -30,31 +32,36 @@ function Hero() {
         </p>
 
         {/* Stats cards */}
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
-          <StatCard value="12+" label="Active investments" />
-          <StatCard value="2" label="Successful exits" />
-          <StatCard value="50+" label="Network partners" />
-        </div>
+        <StateCard />
 
         {/* Scroll indicator */}
-        <div className="mt-20 text-xs tracking-widest text-neutral-500">
-          SCROLL
-          <div className="mt-2 text-primary">↓</div>
+        <div className="md:mt-32 mt-20 flex flex-col items-center gap-5  0">
+          <span className=" text-[12px] font-montserrat text-(--color-foreground)">
+            SCROLL
+          </span>
+          <div className="mt-2 text-(--color-foreground)">
+            <Image
+              src="/downarrow.png"
+              alt="Scroll down"
+              width={32}
+              height={32}
+            />
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function StatCard({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="rounded-2xl border border-neutral-800 bg-neutral-900/40 px-8 py-10 backdrop-blur">
-      <div className="font-serif text-3xl">{value}</div>
-      <div className="mt-2 text-xs uppercase tracking-wider text-neutral-400">
-        {label}
-      </div>
-    </div>
-  );
-}
+// function StatCard({ value, label }: { value: string; label: string }) {
+//   return (
+//     <div className="rounded-2xl border border-neutral-800 bg-neutral-900/40 px-8 py-10 backdrop-blur">
+//       <div className="font-serif text-3xl">{value}</div>
+//       <div className="mt-2 text-xs uppercase tracking-wider text-neutral-400">
+//         {label}
+//       </div>
+//     </div>
+//   );
+// }
 
 export default Hero;
