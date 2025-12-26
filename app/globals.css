@@ -134,3 +134,11 @@ html,
 body {
   background-color: black;
 }
+
+.font-montserrat {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant), serif;
+}

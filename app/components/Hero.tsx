@@ -13,27 +13,20 @@ function Hero() {
       {/* Vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_40%,_rgba(0,0,0,0.9)_100%)]" />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6 text-center">
+      <div className="relative  z-10 mx-auto max-w-6xl px-6 text-center">
         {/* Headline */}
-        <h1 className="font-serif text-4xl leading-tight md:text-6xl lg:text-7xl">
-          We accelerate bold ideas by{" "}
-          <span className="text-[color:var(--color-primary)]">
-            loyal people
-          </span>
-          ,{" "}
-          <span className="text-[color:var(--color-primary)]">
-            solid structure
-          </span>
-          , and{" "}
-          <span className="text-[color:var(--color-primary)]">
-            trusted capital
-          </span>
+        <h1 className=" font-cormorant text-(--color-foreground) text-4xl leading-tight md:text-6xl lg:text-7xl">
+          We accelerate bold ideas by surrounding them with{" "}
+          <span className=" text-(--color-primary)">loyal people</span>,{" "}
+          <span className=" text-(--color-primary)">solid structure</span>, and{" "}
+          <span className="  text-(--color-primary)">trusted capital</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="mx-auto mt-6 max-w-2xl font-sans text-sm  text-(--color-foreground) font-(--font-montserrat)  md:text-base">
+        <p className="mx-auto mt-6 max-w-2xl font-sans text-sm  text-(--color-foreground) font-montserrat  md:text-[24px] ">
           We believe the fastest route to scale is{" "}
-          <span className="italic text-primary">trust</span>, not speed.
+          <span className="italic text-(--color-primary)">trust</span>, not
+          speed.
         </p>
 
         {/* Stats cards */}
