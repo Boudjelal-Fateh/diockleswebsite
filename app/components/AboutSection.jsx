@@ -69,14 +69,17 @@ const AboutSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F1ECE8] md:py-20 md:px-8 px-4 py-12 ">
+    <section
+      id="about"
+      className="min-h-screen border-b border-[#b66a3c] bg-[#F1ECE8] md:py-20 md:px-8 px-4 py-12 "
+    >
       <div className="max-w-[1232px]  mx-auto">
         <div className="grid lg:grid-cols-2  gap-16 items-start">
           {/* Left Column - Text Content */}
           <div className="max-w-xl">
-            <div className="flex items-center gap-2 text-orange-700 text-xs uppercase tracking-wider mb-8 font-medium">
+            <div className="flex items-center gap-2  text-xs uppercase tracking-wider mb-8 font-medium">
               <Image src="/goingup.png" alt="Icon" width={20} height={20} />
-              <h2 className=" font-montserrat text-[14px] leading-[21px] tracking-[0.7px] font-normal ">
+              <h2 className=" text-[#B66A3C] font-montserrat text-[14px] leading-[21px] tracking-[0.7px] font-normal ">
                 ABOUT CORE INVESTMENTS
               </h2>
             </div>
@@ -125,7 +128,7 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

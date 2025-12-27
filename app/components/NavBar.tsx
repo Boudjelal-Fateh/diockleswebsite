@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Image from "next/image";
 const navLinks = [
-  { label: "About", href: "about" },
+  { label: "About", href: "#about" },
   { label: "Ecosystem", href: "ecosystem" },
   { label: "Portfolio", href: "portfolio" },
   { label: "Insights", href: "insights" },
