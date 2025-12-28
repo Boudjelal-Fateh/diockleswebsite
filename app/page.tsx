@@ -1,6 +1,10 @@
 import Hero from "./components/Hero";
 import AboutSection from "./components/AboutSection";
 import PortfolioSection from "./components/PortfolioSection";
+import Footer from "./components/Footer";
+import ContactSection from "./components/ContactSection";
+import MessageSection from "./components/MessageSection";
+import EcosystemSection from "./components/EcosystemSection";
 
 export default function Home() {
   return (
@@ -8,6 +12,10 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <PortfolioSection />
+      <EcosystemSection />
+      <ContactSection />
+      <MessageSection />
+      <Footer />
     </>
   );
 }
