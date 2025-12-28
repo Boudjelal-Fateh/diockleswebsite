@@ -12,7 +12,10 @@ const PortfolioCard = ({
   statusText,
 }) => {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm relative">
+    <section
+      id="portfolio"
+      className="bg-white rounded-2xl p-6 shadow-sm relative"
+    >
       {/* Icon and Status Badge */}
       <div className="flex items-start justify-between mb-4">
         <div className="w-10 h-10 bg-[#f1ece8] rounded-xl flex items-center justify-center">
@@ -52,7 +55,7 @@ const PortfolioCard = ({
       <p className="font-montserrat  text-[14px] leading-[22.8px] text-[#1e1e1e] ">
         {field}
       </p>
-    </div>
+    </section>
   );
 };
 

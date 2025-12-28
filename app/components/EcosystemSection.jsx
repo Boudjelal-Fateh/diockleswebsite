@@ -47,7 +47,10 @@ const EcosystemSection = () => {
   ];
 
   return (
-    <section className="bg-[#d9c3b2] text-[#1e1e1e] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+    <section
+      id="ecosystem"
+      className="bg-[#d9c3b2] text-[#1e1e1e] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
+    >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-12 sm:mb-16 lg:mb-20">
