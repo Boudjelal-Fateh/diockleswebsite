@@ -4,20 +4,20 @@ import Image from "next/image";
 
 function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20 ">
       {/* Background gradient */}
       {/* Base background */}
-      <div className="absolute inset-0 bg-[#0e0e0e]" />
+      <div className="absolute inset-0  bg-brand-gradient  " />
 
       {/* Warm glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(182,106,60,0.25),_transparent_60%)]" />
+      {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(182,106,60,0.25),_transparent_60%)]" /> */}
 
       {/* Vignette */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_40%,_rgba(0,0,0,0.9)_100%)]" />
+      {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_40%,_rgba(0,0,0,0.9)_100%)]" /> */}
 
       <div className="relative  z-10 mx-auto max-w-6xl px-6 text-center">
         {/* Headline */}
-        <h1 className=" font-cormorant text-(--color-foreground) text-4xl leading-tight md:text-6xl lg:text-7xl">
+        <h1 className=" font-cormorant text-(--color-foreground) text-4xl lg:mt-20 leading-tight md:text-6xl lg:text-7xl">
           We accelerate bold ideas by surrounding them with{" "}
           <span className=" text-(--color-primary)">loyal people</span>,{" "}
           <span className=" text-(--color-primary)">solid structure</span>, and{" "}
@@ -35,11 +35,11 @@ function Hero() {
         <StateCard />
 
         {/* Scroll indicator */}
-        <div className="md:mt-32 mt-20 flex flex-col items-center gap-5  0">
+        <div className="md:mt-32 mt-20 flex flex-col items-center   gap-2 mb-4 ">
           <span className=" text-[12px] font-montserrat text-(--color-foreground)">
             SCROLL
           </span>
-          <div className="mt-2 text-(--color-foreground)">
+          <div className=" text-(--color-foreground)">
             <Image
               src="/downarrow.png"
               alt="Scroll down"
