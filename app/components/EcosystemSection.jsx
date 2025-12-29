@@ -168,12 +168,12 @@ const EcosystemSection = () => {
                     height={32}
                     alt="Award Icon"
                   />
-                  <h3 className="text-lg sm:text-xl font-cormorant md:text-[28px]  leading-[48px] font-normal  text-[#f1ece8] ">
+                  <h3 className="text-lg sm:text-xl font-cormorant lg:text-[28px] md:text-[20px]  leading-[48px] font-normal  text-[#f1ece8] ">
                     Join Our Ecosystem
                   </h3>
                 </div>
 
-                <p className="text-sm  md:text-[16.5px] font-montserrat text-[#f1ece8] leading-[24px]  ">
+                <p className="text-sm   md:text-[13px] lg:text-[16.5px] font-montserrat text-[#f1ece8] leading-[24px]  ">
                   We're always looking for exceptional founders, strategic
                   partners, and industry experts to join our growing network.
                 </p>
