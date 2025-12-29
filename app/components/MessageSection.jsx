@@ -10,7 +10,7 @@ const MessageSection = () => {
   ];
 
   return (
-    <section className="bg-[#1e1e1e] text-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+    <section className="bg-[#1e1e1e] lg:max-h-[1144px] text-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
       <div className="max-w-[1104px]  mx-auto">
         {/* Section Title */}
         <h2 className="text-2xl sm:text-3xl  md:text-[56px] text-[#f1ece8] font-cormorant font-bold text-center mb-12 sm:mb-16 lg:mb-20">

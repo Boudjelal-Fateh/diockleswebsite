@@ -135,9 +135,9 @@ const EcosystemSection = () => {
         </div>
 
         {/* Bottom Section - CTA and Last Feature */}
-        <div className="flex flex-col sm:flex-row gap-6 lg:gap-8 mb-12 lg:mb-16">
+        <div className="flex flex-col md:flex-row gap-6 xl:gap-8 mb-12 xl:mb-16">
           {/* Last Feature Card */}
-          <div className="bg-white rounded-2xl p-6 sm:p-7 w-full sm:w-[296px] sm:h-[200px]">
+          <div className="bg-white rounded-2xl p-6 sm:p-7 w-full md:w-[296px] md:h-[200px]">
             <div className="flex items-center justify-center w-10 h-10  rounded-lg bg-[#f1ece8] mb-4">
               <Image
                 src="/spark-dark.png"
@@ -157,7 +157,7 @@ const EcosystemSection = () => {
           </div>
 
           {/* CTA Card */}
-          <div className="bg-gradient-to-b from-[#1F2A44] to-[#1E1E1E] text-[#f1ece8] rounded-2xl p-6 sm:p-8 w-full sm:w-[608px] sm:h-[200px] flex flex-col justify-between">
+          <div className="bg-gradient-to-b from-[#1F2A44] to-[#1E1E1E] text-[#f1ece8] rounded-2xl p-6 sm:p-8 w-full md:w-[608px] md:h-[200px] flex flex-col justify-between">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
               {/* Title and Paragraph */}
               <div className="flex flex-col">
