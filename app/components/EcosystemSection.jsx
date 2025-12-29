@@ -77,7 +77,7 @@ const EcosystemSection = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mb-12 lg:mb-16 md:max-w-[1232px] ">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 mb-12 xl:mb-16 md:max-w-[1232px] ">
           {/* Large Feature Card - Strategic Network */}
           <div>
             <div className="bg-white rounded-2xl p-6 sm:p-8 h-full flex flex-col">
@@ -106,7 +106,7 @@ const EcosystemSection = () => {
           </div>
 
           {/* Feature Cards Grid - Right Side */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 auto-rows-max">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 xl:gap-8 auto-rows-max">
             {features.slice(1, 5).map((feature, index) => (
               <div
                 key={index}

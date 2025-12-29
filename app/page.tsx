@@ -13,8 +13,8 @@ export default function Home() {
       <AboutSection />
       <PortfolioSection />
       <EcosystemSection />
-      <ContactSection />
       <MessageSection />
+      <ContactSection />
       <Footer />
     </>
   );
