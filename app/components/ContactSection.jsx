@@ -44,7 +44,10 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="bg-[#1f2a44] text-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+    <section
+      id="contact"
+      className="bg-[#1f2a44] text-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
+    >
       <div className="max-w-[1232px] mx-auto">
         {/* Header Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-12 lg:mb-16">

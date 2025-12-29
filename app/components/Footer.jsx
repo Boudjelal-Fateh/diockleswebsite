@@ -7,15 +7,15 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const companyLinks = [
-    { label: "About", href: "/about" },
-    { label: "Portfolio", href: "/portfolio" },
-    { label: "Ecosystem", href: "/ecosystem" },
-    { label: "Contact", href: "/contact" },
+    { label: "About", href: "#about" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Ecosystem", href: "#ecosystem" },
+    { label: "Contact", href: "#contact" },
   ];
 
   const resourceLinks = [
-    { label: "Insights", href: "/insights" },
-    { label: "Our Approach", href: "/about" },
+    { label: "Insights", href: "#insights" },
+    { label: "Our Approach", href: "#about" },
     { label: "Investment Criteria", href: "#" },
     { label: "Partner Network", href: "#" },
   ];
