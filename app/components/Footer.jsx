@@ -21,13 +21,13 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#1e1e1e] text-white px-4 py-12 md:px-8 md:py-20 lg:px-0">
+    <footer className="bg-[#1e1e1e] text-white px-4 lg:py-12 md:px-8 md:py-20 lg:px-0">
       <div className="max-w-[1280px] mx-auto pt-[80px] px-[24px]">
         {/* Mobile & Tablet Layout */}
         <div className="space-y-8 md:hidden">
           {/* Logo & Description */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-cormorant font-bold">
+            <h2 className="text-[32px] font-cormorant leading-[48px] text-[#f1ece8]  ">
               Core Investments
             </h2>
             <p className="text-sm  text-[16px] font-montserrat text-[#f1ece8]/70 leading-[26px]">

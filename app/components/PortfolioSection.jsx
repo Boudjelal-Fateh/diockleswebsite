@@ -172,9 +172,9 @@ const PortfolioSection = () => {
             </h2>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-cormorant text-[#1e1e1e] leading-[61.6px] max-w-2xl">
+          <h1 className="text-[31px] md:text-5xl lg:text-[56px] font-cormorant text-[#1e1e1e] md:leading-[61.6px] max-w-2xl">
             Building the future,
-            <br />
+            <br className=" hidden md:block" />
             one venture at a time
           </h1>
         </div>

@@ -84,7 +84,7 @@ const AboutSection = () => {
               </h2>
             </div>
 
-            <h1 className="font-cormorant text-[58px] leading-[61.6px]   ">
+            <h1 className="font-cormorant text-[31px]  md:text-[58px] md:leading-[61.6px]   ">
               Where vision meets execution
             </h1>
 

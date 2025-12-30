@@ -64,7 +64,7 @@ const EcosystemSection = () => {
             Our Ecosystem
           </p>
 
-          <h2 className="text-3xl sm:text-4xl md:text-[56px]   font-cormorant font-bold leading-[61.6px] text-[#1f2a44] mb-6 sm:mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-[56px]   font-cormorant font-bold md:leading-[61.6px] text-[#1f2a44] mb-6 sm:mb-8">
             It takes a network to build what <br className=" md:block hidden" />{" "}
             matters
           </h2>
