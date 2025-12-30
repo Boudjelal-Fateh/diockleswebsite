@@ -25,11 +25,11 @@ const data = [
 
 function StateCard() {
   return (
-    <div className="md:mt-48 mt-20 grid gap-6 md:grid-cols-3">
+    <div className="md:mt-48 max-w-[896px] mx-auto mt-20 grid gap-[32px] md:grid-cols-3">
       {data.map((stat) => (
         <div
           key={stat.label}
-          className="flex flex-col items-center justify-center rounded-2xl border border-[#B66A3C]  px-8 py-10 backdrop-blur"
+          className="flex flex-col lg:w-[277px] lg:h-[182px]  items-center justify-center rounded-2xl border border-[#B66A3C]  px-8 py-10 backdrop-blur"
         >
           <Image src={stat.icon} alt={stat.label} width={32} height={32} />
           <div className=" mt-4 font-serif text-[42px] font-cormorant text-(--color-foreground) ">

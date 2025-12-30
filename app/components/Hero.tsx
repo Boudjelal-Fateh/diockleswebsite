@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20 ">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#1e1e1e] pt-20 ">
       {/* Background gradient */}
       {/* Base background */}
       <div className="absolute inset-0  bg-brand-gradient  " />
@@ -15,9 +15,9 @@ function Hero() {
       {/* Vignette */}
       {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_40%,_rgba(0,0,0,0.9)_100%)]" /> */}
 
-      <div className="relative  z-10 mx-auto max-w-6xl px-6 text-center">
+      <div className="relative  z-10 mx-auto max-w-6xl px-4 lg:px-0  text-start md:text-center ">
         {/* Headline */}
-        <h1 className=" font-cormorant text-(--color-foreground) text-4xl lg:mt-20 leading-tight md:text-6xl lg:text-7xl">
+        <h1 className=" font-cormorant text-[#f1ece8] text-[31px] mt-10  leading-[40px]  lg:mt-20  md:text-6xl lg:text-[80px] md:leading-[80px] ">
           We accelerate bold ideas by surrounding them with{" "}
           <span className=" text-(--color-primary)">loyal people</span>,{" "}
           <span className=" text-(--color-primary)">solid structure</span>, and{" "}
@@ -25,7 +25,7 @@ function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="mx-auto mt-6 max-w-2xl font-sans text-sm  text-(--color-foreground) font-montserrat  md:text-[24px] ">
+        <p className="mx-auto mt-6 max-w-2xl font-sans text-sm  text-(--color-foreground) font-montserrat md:leading-[36px]  md:text-[24px] ">
           We believe the fastest route to scale is{" "}
           <span className="italic text-(--color-primary)">trust</span>, not
           speed.
