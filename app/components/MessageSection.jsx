@@ -12,7 +12,7 @@ const MessageSection = () => {
   return (
     <section
       id="insights"
-      className="bg-[#1e1e1e] lg:max-h-[1144px] text-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
+      className="bg-[#1e1e1e]  text-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
     >
       <div className="max-w-[1104px]  mx-auto">
         {/* Section Title */}
@@ -62,23 +62,33 @@ const MessageSection = () => {
             {/* Message Text */}
             <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10">
               <p className="text-sm sm:text-base text-[f1ece8]/90 leading-[29.3px] md:text-[18px] font-montserrat">
-                I've spent my life walking the edge between vision and
-                execution—launching, advising, rebuilding. Core Investments is
-                born from that experience: not a fund, but a growth accelerator.
-                A structure for loyalty to scale.
+                I’ve spent my life walking the edge between vision and
+                execution: launching companies, advising founders, navigating
+                reinventions. I’ve made bold moves. I’ve made mistakes. I’ve
+                trusted the wrong people. And I’ve also experienced what happens
+                when trust, talent, and timing align.
               </p>
 
               <p className="text-sm sm:text-base text-[f1ece8]/90 leading-[29.3px] md:text-[18px] font-montserrat">
-                I back founders with clarity, courage, and skin in the game.
-                Those who understand that building something meaningful requires
-                more than capital—it requires conviction, resilience, and a
-                network you can truly count on.
+                Core Investments is born from that experience. This is not a
+                fund. It’s not just a firm. It’s a growth accelerator. A launch
+                platform. A structure for loyalty to scale. I built it to back
+                the people and projects that might otherwise fall through the
+                cracks, too human, too weird, too early, or too real for
+                traditional capital.
               </p>
 
               <p className="text-sm sm:text-base text-[f1ece8]/90 leading-[29.3px] md:text-[18px] font-montserrat">
-                We don't chase trends. We identify potential, commit deeply, and
-                stand by our partners through every challenge. That's the Core
-                way.
+                I serve founders with insane clarity and the courage to chase
+                it. People who don’t need help dreaming bigger. They need
+                someone who can build alongside, stay the course, and bring
+                grounded momentum to the madness.
+              </p>
+              <p className="text-sm sm:text-base text-[f1ece8]/90 leading-[29.3px] md:text-[18px] font-montserrat">
+                I’m not here to manage your money. I’m here to amplify your
+                mission. With structure. With stamina. With skin in the game.
+                When we partner, I show up fully. As a challenger. As an
+                enabler. As someone who doesn’t flinch when it gets hard.
               </p>
             </div>
 
@@ -92,8 +102,9 @@ const MessageSection = () => {
                   Founder & Managing Partner
                 </p>
               </div>
-              <p className="text-sm sm:text-base md:text-[20px] leading-[30px] font-cormorant italic text-[#b66a3c] mt-4 sm:mt-0">
-                "Making madness work."
+              <p className="text-sm sm:text-base md:text-[20px] flex flex-col leading-[30px] font-cormorant italic text-[#b66a3c] mt-4 sm:mt-0">
+                “Making madness work.” That’s what I live for.{" "}
+                <span>If that’s where you live too, we should talk.</span>
               </p>
             </div>
           </div>
