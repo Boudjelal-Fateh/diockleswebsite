@@ -63,17 +63,25 @@ const PortfolioCard = ({
 const PortfolioSection = () => {
   const portfolioItems = [
     {
-      title: "M3",
-      category: "TECHNOLOGY",
-      description: "Technical precision solutions",
+      title: "Multi Meta Multivers (M3) ",
+      category: "Digital Engineering",
+      description: "IA, Web3, Video Games, Digital Services",
       status: "active",
       statusText: "Active",
       field: "Hands-On Investments",
     },
     {
-      title: "AI & Robotics",
+      title: "AI4Humain",
       category: "DEEP TECH",
-      description: "Cutting-edge automation",
+      description: "AI and Robotics",
+      status: "active",
+      statusText: "Active",
+      field: "Hands-On Investments",
+    },
+    {
+      title: "3CM Realtors",
+      category: "SaaS Software Publisher",
+      description: "Real Estate SaaS and AI powered tools",
       status: "active",
       statusText: "Active",
       field: "Hands-On Investments",
@@ -86,26 +94,26 @@ const PortfolioSection = () => {
       statusText: "Active",
       field: "Hands-On Investments",
     },
+
     {
-      title: "3CM Property Development",
-      category: "REAL ESTATE",
-      description: "Development projects",
+      title: "Pedra Latina",
+      category: "Real Estate ",
+      description: "Development",
       status: "active",
       statusText: "Active",
       field: "Hands-On Investments",
+    },
+    {
+      title: "SASURF",
+      category: "SaaS Digital Identity and Compliance Platform ",
+      description: "Automated KYC, AML, and secure user onboarding",
+      status: "active",
+      statusText: "Active",
     },
     {
       title: "Delicity",
-      category: "FOOD TECH",
-      description: "Modern food solutions",
-      status: "active",
-      statusText: "Active",
-      field: "Hands-On Investments",
-    },
-    {
-      title: "DEKI",
-      category: "SAAS",
-      description: "Enterprise software",
+      category: "Food Tech",
+      description: "Innovative Delivery Solutions",
       status: "active",
       statusText: "Active",
     },
@@ -124,39 +132,34 @@ const PortfolioSection = () => {
       statusText: "Active",
     },
     {
-      title: "Seedy",
-      category: "FINTECH",
-      description: "Financial services",
+      title: "Seecly	",
+      category: "HealthTech",
+      description: "2nd Hand goods marketplace ",
+      status: "exited",
+      statusText: "Exited",
+    },
+
+    {
+      title: "Trust-Place",
+      category: "SaaS Platform",
+      description:
+        "Digital product certification and post-purchase traceability",
       status: "active",
-      statusText: "Active",
+      statusText: "active",
     },
     {
-      title: "Trustplace",
-      category: "PROPTECH",
-      description: "Real estate platform",
-      status: "active",
-      statusText: "Active",
-    },
-    {
-      title: "Cosmic Data",
-      category: "DATA",
-      description: "Data analytics",
-      status: "active",
-      statusText: "Active",
-    },
-    {
-      title: "Groupe YSEND",
+      title: "YSEND Group	",
       category: "LOGISTICS",
       description: "Co-founder, shares sold",
       status: "exited",
-      statusText: "Exited 2023",
+      statusText: "Exited",
     },
     {
-      title: "DFC Building & MPS Industry",
-      category: "INDUSTRIAL",
-      description: "Advisory role, shares sold",
-      status: "exited",
-      statusText: "Exited 2022",
+      title: "Envoi du Net - Yourstore",
+      category: "E-commerce logistics and shipping solutions",
+      description: "Co-founder",
+      status: "active",
+      statusText: "Active",
     },
   ];
 
@@ -199,7 +202,7 @@ const PortfolioSection = () => {
           <p className="text-[#ababab] font-montserrat leading-[27px] mb-6 text-sm md:text-[18px] ">
             Looking to partner with Core Investments?
           </p>
-          <button className="bg-[#1e1e1e] text-white px-8 py-3 rounded-[8px] font-montserrat leading-[20px] hover:bg-[#b66a3c] md:w-[154px] md:h-[48px] transition-colors  md:text-[14px] font-medium">
+          <button className="bg-[#1e1e1e] text-white px-8 py-3  cursor-pointer rounded-[8px] font-montserrat leading-[20px] hover:bg-[#b66a3c] md:w-[154px] md:h-[48px] transition-colors  md:text-[14px] font-medium">
             Get In Touch
           </button>
         </div>
