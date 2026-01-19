@@ -111,7 +111,7 @@ const MessageSection = () => {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8  pt-12 sm:pt-16 lg:pt-20">
+        {/* <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8  pt-12 sm:pt-16 lg:pt-20">
           {stats.map((stat, index) => (
             <div
               key={index}
@@ -125,7 +125,7 @@ const MessageSection = () => {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

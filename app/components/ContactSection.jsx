@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Mail, BookmarkIcon } from "lucide-react";
 import Image from "next/image";
+import { useForm } from "@formspree/react";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const ContactSection = () => {
     company: "",
     message: "",
   });
+  const [state, handleSubmit] = useForm("xqeeqovd");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,12 +19,6 @@ const ContactSection = () => {
       ...prev,
       [name]: value,
     }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
   };
 
   const contactOptions = [
@@ -100,7 +96,7 @@ const ContactSection = () => {
             </div>
 
             {/* Direct Contact */}
-            <div className="mt-8 lg:mt-12 pt-6 lg:pt-8 border-t border-gray-700">
+            {/* <div className="mt-8 lg:mt-12 pt-6 lg:pt-8 border-t border-gray-700">
               <p className="text-xs sm:text-sm text-[#f1ece8]/60 font-montserrat md:text-[14px] leading-[21px]  mb-2">
                 Or reach us directly:
               </p>
@@ -110,98 +106,119 @@ const ContactSection = () => {
               >
                 contact@coreinvestments.com
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Form */}
           <div className="flex  items-start justify-center lg:justify-end">
-            <form
-              onSubmit={handleSubmit}
-              className="bg-[#f1ece8] rounded-[16px] px-8 pt-8 w-full lg:w-[584px] h-[514px] flex flex-col"
-            >
-              {/* Name Field */}
-              <div className="mb-4">
-                <label className="block  font-montserrat  text-[14px] text-[#ababab] leading-[21px] mb-1.5">
-                  Name *
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your name"
-                  className="w-full px-3 py-2 border font-montserrat border-[#ababab] bg-[#ffffff] rounded-lg text-gray-900 placeholder-[#717182] focus:outline-none focus:ring-2 focus:ring-[#b66a3c] focus:border-transparent text-xs"
-                  required
-                />
+            {state.succeeded ? (
+              <div className="bg-[#f1ece8] rounded-[16px] px-8 pt-8 pb-8 w-full lg:w-[584px] flex flex-col items-center justify-center min-h-[400px]">
+                <div className="text-center">
+                  <h2 className="text-2xl md:text-[32px] font-cormorant text-[#1f2a44] mb-4">
+                    Thank You!
+                  </h2>
+                  <p className="text-sm md:text-base font-montserrat text-[#1f2a44] mb-6">
+                    Thanks for reaching out. We've received your message and
+                    will get back to you soon!
+                  </p>
+                  <button
+                    onClick={() => window.location.reload()}
+                    className="bg-[#b66a3c] hover:bg-[#a85a2c] text-white font-montserrat font-medium py-2.5 px-6 rounded-lg transition-colors duration-200"
+                  >
+                    Send Another Message
+                  </button>
+                </div>
               </div>
-
-              {/* Email Field */}
-              <div className="mb-4">
-                <label className="block  font-montserrat  text-[14px] text-[#ababab] leading-[21px] mb-1.5">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your@email.com"
-                  className="w-full px-3 py-2 border font-montserrat border-[#ababab] bg-[#ffffff] rounded-lg text-gray-900 placeholder-[#717182] focus:outline-none focus:ring-2 focus:ring-[#b66a3c] focus:border-transparent text-xs"
-                  required
-                />
-              </div>
-
-              {/* Company Field */}
-              <div className="mb-4">
-                <label className="block  font-montserrat  text-[14px] text-[#ababab] leading-[21px] mb-1.5">
-                  Company *
-                </label>
-                <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  placeholder="Your company"
-                  className="w-full px-3 py-2 border font-montserrat border-[#ababab] bg-[#ffffff] rounded-lg text-gray-900 placeholder-[#717182] focus:outline-none focus:ring-2 focus:ring-[#b66a3c] focus:border-transparent text-xs"
-                  required
-                />
-              </div>
-
-              {/* Message Field */}
-              <div className="mb-4 ">
-                <label className="block  font-montserrat  text-[14px] text-[#ababab] leading-[21px] mb-1.5">
-                  Message *
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Tell us about your project or inquiry..."
-                  rows="3"
-                  className="w-full px-3 py-2 border font-montserrat border-[#ababab] bg-[#ffffff] rounded-lg text-gray-900 placeholder-[#717182] focus:outline-none focus:ring-2 focus:ring-[#b66a3c] focus:border-transparent text-xs"
-                  required
-                />
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full h-[48px]    cursor-pointer md:text-[14px] leading-[20px] space-y-[16px] bg-[#b66a3c] hover:bg-[#a85a2c] text-white font-montserrat font-medium py-2 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 text-xs mb-2"
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                method="POST"
+                className="bg-[#f1ece8] rounded-[16px] px-8 pt-8 w-full lg:w-[584px] h-[514px] flex flex-col"
               >
-                Send Message
-                <Image
-                  src="/arrowwhite.png"
-                  alt="Arrow Right Icon"
-                  width={16}
-                  height={16}
-                />
-              </button>
+                {/* Name Field */}
+                <div className="mb-4">
+                  <label className="block  font-montserrat  text-[14px] text-[#ababab] leading-[21px] mb-1.5">
+                    Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your name"
+                    className="w-full px-3 py-2 border font-montserrat border-[#ababab] bg-[#ffffff] rounded-lg text-gray-900 placeholder-[#717182] focus:outline-none focus:ring-2 focus:ring-[#b66a3c] focus:border-transparent text-xs"
+                    required
+                  />
+                </div>
 
-              {/* Response Time */}
-              <p className="text-center text-xs md:text-[12px] leading-[18px] mt-4 font-montserrat text-[#ababab] ">
-                We typically respond within 48 hours
-              </p>
-            </form>
+                {/* Email Field */}
+                <div className="mb-4">
+                  <label className="block  font-montserrat  text-[14px] text-[#ababab] leading-[21px] mb-1.5">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="your@email.com"
+                    className="w-full px-3 py-2 border font-montserrat border-[#ababab] bg-[#ffffff] rounded-lg text-gray-900 placeholder-[#717182] focus:outline-none focus:ring-2 focus:ring-[#b66a3c] focus:border-transparent text-xs"
+                    required
+                  />
+                </div>
+
+                {/* Company Field */}
+                <div className="mb-4">
+                  <label className="block  font-montserrat  text-[14px] text-[#ababab] leading-[21px] mb-1.5">
+                    Company *
+                  </label>
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Your company"
+                    className="w-full px-3 py-2 border font-montserrat border-[#ababab] bg-[#ffffff] rounded-lg text-gray-900 placeholder-[#717182] focus:outline-none focus:ring-2 focus:ring-[#b66a3c] focus:border-transparent text-xs"
+                    required
+                  />
+                </div>
+
+                {/* Message Field */}
+                <div className="mb-4 ">
+                  <label className="block  font-montserrat  text-[14px] text-[#ababab] leading-[21px] mb-1.5">
+                    Message *
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell us about your project or inquiry..."
+                    rows="3"
+                    className="w-full px-3 py-2 border font-montserrat border-[#ababab] bg-[#ffffff] rounded-lg text-gray-900 placeholder-[#717182] focus:outline-none focus:ring-2 focus:ring-[#b66a3c] focus:border-transparent text-xs"
+                    required
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="w-full h-[48px]    cursor-pointer md:text-[14px] leading-[20px] space-y-[16px] bg-[#b66a3c] hover:bg-[#a85a2c] text-white font-montserrat font-medium py-2 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 text-xs mb-2"
+                >
+                  Send Message
+                  <Image
+                    src="/arrowwhite.png"
+                    alt="Arrow Right Icon"
+                    width={16}
+                    height={16}
+                  />
+                </button>
+
+                {/* Response Time */}
+                <p className="text-center text-xs md:text-[12px] leading-[18px] mt-4 font-montserrat text-[#ababab] ">
+                  We typically respond within 48 hours
+                </p>
+              </form>
+            )}
           </div>
         </div>
       </div>
