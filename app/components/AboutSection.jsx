@@ -108,11 +108,11 @@ const AboutSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid md:grid-cols-3 gap-4">
+            {/* <div className="grid md:grid-cols-3 gap-4">
               {stats.map((stat, index) => (
                 <StatCard key={index} value={stat.value} label={stat.label} />
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Right Column - Feature Cards in 2x2 Grid */}
