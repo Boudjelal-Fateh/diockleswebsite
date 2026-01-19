@@ -36,15 +36,15 @@ const EcosystemSection = () => {
       description: "Speed when it matters",
     },
   ];
-
-  const partners = [
-    "M3",
-    "DEKI",
-    "LivMeds",
-    "Delicity",
-    "Trustplace",
-    "Seecly",
+  const boxItems = [
+    "Strategy & Fundraising",
+    "Product, Technology & Software Development",
+    "Sales, Branding & Marketing",
+    "Operations & Customer Support",
+    "Logistics & Supply Chain",
+    "Corporate (Legal, Finance, HR & Compliance)",
   ];
+  const partners = ["M3", "YSEND", "DELICITY", "COSMIC DATA", "TRUSTPLACE"];
 
   return (
     <section
@@ -94,12 +94,16 @@ const EcosystemSection = () => {
               </p>
 
               {/* Network Grid */}
-              <div className="grid grid-cols-3 gap-3">
-                {[1, 2, 3, 4, 5, 6].map((item) => (
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
+                {boxItems.map((item, index) => (
                   <div
-                    key={item}
-                    className="aspect-square bg-gray-100 rounded-lg"
-                  ></div>
+                    key={index}
+                    className="aspect-square bg-[#b66a3c]/10 rounded-lg flex items-center justify-center p-2"
+                  >
+                    <p className="text-[10px] sm:text-xs font-montserrat text-[#1f2a44] text-center leading-">
+                      {item}
+                    </p>
+                  </div>
                 ))}
               </div>
             </div>
@@ -181,9 +185,11 @@ const EcosystemSection = () => {
 
               {/* Button */}
               <div className="flex items-center justify-start sm:justify-center">
-                <button className="bg-[#b66a3c] mx-auto cursor-pointer hover:bg-[#a85a2c] md:w-[138px] md:h-[48px] text-white font-montserrat font-medium py-2.5 sm:py-3 px-6 rounded-[10px] transition-colors duration-200 inline-flex items-center gap-2 text-sm whitespace-nowrap">
-                  Learn More
-                </button>
+                <a href="#contact ">
+                  <button className="bg-[#b66a3c] mx-auto cursor-pointer hover:bg-[#a85a2c] md:w-[138px] md:h-[48px] text-white font-montserrat font-medium py-2.5 sm:py-3 px-6 rounded-[10px] transition-colors duration-200 inline-flex items-center gap-2 text-sm whitespace-nowrap">
+                    Learn More
+                  </button>
+                </a>
               </div>
             </div>
           </div>
