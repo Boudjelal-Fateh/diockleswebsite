@@ -202,9 +202,11 @@ const PortfolioSection = () => {
           <p className="text-[#ababab] font-montserrat leading-[27px] mb-6 text-sm md:text-[18px] ">
             Looking to partner with Core Investments?
           </p>
-          <button className="bg-[#1e1e1e] text-white px-8 py-3  cursor-pointer rounded-[8px] font-montserrat leading-[20px] hover:bg-[#b66a3c] md:w-[154px] md:h-[48px] transition-colors  md:text-[14px] font-medium">
-            Get In Touch
-          </button>
+          <a href="#contact">
+            <button className="bg-[#1e1e1e] text-white px-8 py-3  cursor-pointer rounded-[8px] font-montserrat leading-[20px] hover:bg-[#b66a3c] md:w-[154px] md:h-[48px] transition-colors  md:text-[14px] font-medium">
+              Get In Touch
+            </button>
+          </a>
         </div>
       </div>
     </div>

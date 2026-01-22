@@ -17,7 +17,7 @@ const Footer = () => {
     { label: "Insights", href: "#insights" },
     { label: "Our Approach", href: "#about" },
     { label: "Investment Criteria", href: "#" },
-    { label: "Partner Network", href: "#" },
+    { label: "Partner Network", href: "#ecosystem" },
   ];
 
   return (
