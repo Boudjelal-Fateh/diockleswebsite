@@ -7,7 +7,24 @@ import Link from "next/link";
 const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [isNewsletterSubscribed, setIsNewsletterSubscribed] = useState(false);
+  const [newsletterError, setNewsletterError] = useState("");
   const currentYear = new Date().getFullYear();
+
+  const handleNewsletterSubscribe = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (emailRegex.test(newsletterEmail.trim())) {
+      setIsNewsletterSubscribed(true);
+      setNewsletterEmail("");
+      setNewsletterError("");
+      setTimeout(() => {
+        setIsNewsletterSubscribed(false);
+      }, 5000);
+    } else {
+      setNewsletterError("Please enter a valid email");
+    }
+  };
 
   const companyLinks = [
     { label: "About", href: "#about" },
@@ -19,7 +36,7 @@ const Footer = () => {
   const resourceLinks = [
     { label: "Insights", href: "#insights" },
     { label: "Our Approach", href: "#about" },
-    { label: "Investment Criteria", href: "#" },
+    { label: "Investment Criteria", href: "#insights " },
     { label: "Partner Network", href: "#ecosystem" },
   ];
 
@@ -44,16 +61,40 @@ const Footer = () => {
             <p className="text-xs  font-montserrat text-[#f1ece8]/80 leading-[21px] ">
               Stay updated with our latest insights
             </p>
-            <div className="flex flex-col gap-2">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 px-4 py-2 rounded-[10px] bg-[#f1ece8]/10 text-white  text-sm focus:outline-none"
-              />
-              <button className="px-6 py-2 bg-[#b66a3c] hover:bg-[#a85a2c] text-white rounded-lg font-medium text-sm transition-colors">
-                Subscribe
-              </button>
-            </div>
+            {isNewsletterSubscribed ? (
+              <div className="p-3 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-sm font-montserrat">
+                ✓ You subscribed to our newsletter!
+              </div>
+            ) : (
+              <div className="flex flex-col gap-2">
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={newsletterEmail}
+                  onChange={(e) => {
+                    setNewsletterEmail(e.target.value);
+                    setNewsletterError("");
+                  }}
+                  onKeyPress={(e) =>
+                    e.key === "Enter" && handleNewsletterSubscribe()
+                  }
+                  className={`flex-1 px-4 py-2 rounded-[10px] bg-[#f1ece8]/10 text-white text-sm focus:outline-none ${
+                    newsletterError ? "border border-red-500" : ""
+                  }`}
+                />
+                {newsletterError && (
+                  <p className="text-red-400 text-xs font-montserrat">
+                    {newsletterError}
+                  </p>
+                )}
+                <button
+                  onClick={handleNewsletterSubscribe}
+                  className="px-6 py-2 bg-[#b66a3c] hover:bg-[#a85a2c] text-white rounded-lg font-medium text-sm transition-colors cursor-pointer"
+                >
+                  Subscribe
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Social Links */}
@@ -142,16 +183,42 @@ const Footer = () => {
               <p className="text-[14px] font-montserrat text-[#f1ece8]/80 leading-[21px]    ">
                 Stay updated with our latest insights
               </p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="your@email.com"
-                  className="w-[312px] h-[42px] px-4 py-2 rounded-[10px] bg-[#f1ece8]/10 text-white  text-sm focus:outline-none"
-                />
-                <button className="px-6 py-2 bg-[#b66a3c] cursor-pointer hover:bg-[#a85a2c] text-white font-montserrat text-[16px] leading-[24px] rounded-lg text-sm transition-colors">
-                  Subscribe
-                </button>
-              </div>
+              {isNewsletterSubscribed ? (
+                <div className="p-3 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-sm font-montserrat">
+                  ✓ You subscribed to our newsletter!
+                </div>
+              ) : (
+                <div className="flex flex-col gap-2">
+                  <div className="flex gap-2">
+                    <input
+                      type="email"
+                      placeholder="your@email.com"
+                      value={newsletterEmail}
+                      onChange={(e) => {
+                        setNewsletterEmail(e.target.value);
+                        setNewsletterError("");
+                      }}
+                      onKeyPress={(e) =>
+                        e.key === "Enter" && handleNewsletterSubscribe()
+                      }
+                      className={`w-[312px] h-[42px] px-4 py-2 rounded-[10px] bg-[#f1ece8]/10 text-white text-sm focus:outline-none ${
+                        newsletterError ? "border border-red-500" : ""
+                      }`}
+                    />
+                    <button
+                      onClick={handleNewsletterSubscribe}
+                      className="px-6 py-2 bg-[#b66a3c] cursor-pointer hover:bg-[#a85a2c] text-white font-montserrat text-[16px] leading-[24px] rounded-lg text-sm transition-colors"
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                  {newsletterError && (
+                    <p className="text-red-400 text-xs font-montserrat">
+                      {newsletterError}
+                    </p>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* Social Links */}
@@ -260,13 +327,13 @@ const Footer = () => {
           <div className="flex gap-6 ">
             <button
               onClick={() => setIsPrivacyModalOpen(true)}
-              className=" transition-colors text-xs md:text-[14px] leading-[21px] hover:text-[#b66a3c]  font-montserrat text-[#f1ece8]/50"
+              className=" cursor-pointer transition-colors text-xs md:text-[14px] leading-[21px] hover:text-[#b66a3c]  font-montserrat text-[#f1ece8]/50"
             >
               Privacy Policy
             </button>
             <button
               onClick={() => setIsModalOpen(true)}
-              className=" transition-colors text-xs md:text-[14px] leading-[21px] hover:text-[#b66a3c] font-montserrat text-[#f1ece8]/50"
+              className=" cursor-pointer transition-colors text-xs md:text-[14px] leading-[21px] hover:text-[#b66a3c] font-montserrat text-[#f1ece8]/50"
             >
               Terms of Service
             </button>
@@ -295,14 +362,14 @@ const Footer = () => {
           <div className="bg-[#1e1e1e] rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto border border-[#f1ece8]/10 terms-modal-content">
             {/* Modal Header */}
             <div className="sticky top-0 flex items-center justify-between p-6 border-b border-[#f1ece8]/10 bg-[#1e1e1e]">
-              <h2 className="text-2xl font-cormorant text-[#f1ece8]">
+              <h2 className="text-2xl   font-cormorant text-[#f1ece8]">
                 Terms of Service
               </h2>
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="text-[#f1ece8]/70 hover:text-[#f1ece8] transition-colors"
               >
-                <X size={24} />
+                <X size={24} className=" cursor-pointer" />
               </button>
             </div>
 
@@ -763,7 +830,7 @@ const Footer = () => {
             <div className="sticky bottom-0 p-6 border-t border-[#f1ece8]/10 bg-[#1e1e1e] flex gap-4">
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="flex-1 px-6 py-2.5 bg-[#b66a3c] hover:bg-[#a85a2c] text-white font-montserrat font-medium rounded-lg transition-colors"
+                className="flex-1 cursor-pointer px-6 py-2.5 bg-[#b66a3c] hover:bg-[#a85a2c] text-white font-montserrat font-medium rounded-lg transition-colors"
               >
                 Close
               </button>
@@ -800,7 +867,7 @@ const Footer = () => {
                 onClick={() => setIsPrivacyModalOpen(false)}
                 className="text-[#f1ece8]/70 hover:text-[#f1ece8] transition-colors"
               >
-                <X size={24} />
+                <X size={24} className="cursor-pointer" />
               </button>
             </div>
 
@@ -1301,7 +1368,7 @@ const Footer = () => {
             <div className="sticky bottom-0 p-6 border-t border-[#f1ece8]/10 bg-[#1e1e1e] flex gap-4">
               <button
                 onClick={() => setIsPrivacyModalOpen(false)}
-                className="flex-1 px-6 py-2.5 bg-[#b66a3c] hover:bg-[#a85a2c] text-white font-montserrat font-medium rounded-lg transition-colors"
+                className="flex-1 cursor-pointer px-6 py-2.5 bg-[#b66a3c] hover:bg-[#a85a2c] text-white font-montserrat font-medium rounded-lg transition-colors"
               >
                 Close
               </button>
