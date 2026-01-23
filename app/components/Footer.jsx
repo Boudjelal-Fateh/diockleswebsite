@@ -246,7 +246,7 @@ const Footer = () => {
                 />
               </Link>
               <Link
-                href="#"
+                href="mailto:contact@core.investments"
                 className=" w-[40px] h-[40px]  border-[#f1ece8]/20 hover:border-[#b66a3c]   transition-colors border px-2 py-2 rounded-full"
               >
                 <Image src="/letter2.png" alt="Letter" width={20} height={20} />
