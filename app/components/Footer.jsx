@@ -9,7 +9,7 @@ const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [state, handleSubmit] = useForm("mpqpdrab");
+  const [state, handleSubmit] = useForm("mbdgokwk");
   const currentYear = new Date().getFullYear();
 
   const handleNewsletterSubmit = async (e) => {
