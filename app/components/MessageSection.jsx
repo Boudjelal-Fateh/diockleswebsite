@@ -24,7 +24,7 @@ const MessageSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-12 lg:mb-20 items-start">
           {/* Left Card */}
           <div className=" relative lg:col-span-1 flex flex-col items-start h-[346px]">
-            <div className="w-[64px] h-[64px] bg-[#b66a3c]/10 rounded-full absolute -top-[24px] -left-[24px] flex items-center justify-center">
+            <div className="w-[64px] h-[64px] bg-[#b66a3c]/10 rounded-full absolute -top-[24px] -left-[24px] flex items-center justify-center z-10">
               <Image
                 src="/quotes.png"
                 alt="Quotes Icon"
@@ -34,21 +34,13 @@ const MessageSection = () => {
               />
             </div>
 
-            <div className="bg-[linear-gradient(135deg,rgba(182,106,60,0.2)_0%,rgba(31,42,68,0.2)_100%)] rounded-2xl p-8 sm:p-10 w-full flex flex-col items-center flex-1">
-              {/* Avatar */}
-              <div className="w-[96px] h-[96px] rounded-full bg-[#b66a3c]/20 flex items-center justify-center mb-6 space-y-[16px] md:mt-10">
-                <span className="text-3xl md:text-[42px] leading-[63px] text-[#b66a3c] font-cormorant sm:text-4xl ">
-                  CC
-                </span>
-              </div>
-
-              {/* Name and Title */}
-              <h3 className="text-lg sm:text-xl font-cormorant  md:text-[24px] leading-[36px] font-normal text-[#f1ece8] text-center mb-2">
-                Christophe Core
-              </h3>
-              <p className="text-xs md:text-[14px] leading-[21px] sm:text-sm text-[#b66a3c] font-montserrat text-center">
-                Founder & Managing Partner
-              </p>
+            <div className="relative rounded-2xl p-8 sm:p-10 w-full flex-1 overflow-hidden">
+              <Image
+                src="/bg1.png"
+                alt="Background"
+                fill
+                className="absolute inset-0 object-cover"
+              />
             </div>
           </div>
 
