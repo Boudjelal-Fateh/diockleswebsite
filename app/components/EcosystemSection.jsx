@@ -1,5 +1,5 @@
 import React from "react";
-import { Network, Users, Lightbulb, Shield, Eye, Zap } from "lucide-react";
+import { Network,  Zap } from "lucide-react";
 import Image from "next/image";
 
 const EcosystemSection = () => {

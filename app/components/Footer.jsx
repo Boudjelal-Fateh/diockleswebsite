@@ -3,26 +3,20 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Mail, Linkedin, Twitter, X } from "lucide-react";
 import Link from "next/link";
+import { useForm } from "@formspree/react";
 
 const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [isNewsletterSubscribed, setIsNewsletterSubscribed] = useState(false);
-  const [newsletterError, setNewsletterError] = useState("");
+  const [state, handleSubmit] = useForm("mpqpdrab");
   const currentYear = new Date().getFullYear();
 
-  const handleNewsletterSubscribe = () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (emailRegex.test(newsletterEmail.trim())) {
-      setIsNewsletterSubscribed(true);
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    await handleSubmit(e);
+    if (state.succeeded) {
       setNewsletterEmail("");
-      setNewsletterError("");
-      setTimeout(() => {
-        setIsNewsletterSubscribed(false);
-      }, 5000);
-    } else {
-      setNewsletterError("Please enter a valid email");
     }
   };
 
@@ -61,39 +55,32 @@ const Footer = () => {
             <p className="text-xs  font-montserrat text-[#f1ece8]/80 leading-[21px] ">
               Stay updated with our latest insights
             </p>
-            {isNewsletterSubscribed ? (
+            {state.succeeded ? (
               <div className="p-3 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-sm font-montserrat">
                 ✓ You subscribed to our newsletter!
               </div>
             ) : (
-              <div className="flex flex-col gap-2">
+              <form
+                onSubmit={handleNewsletterSubmit}
+                className="flex flex-col gap-2"
+              >
                 <input
                   type="email"
+                  name="email"
                   placeholder="your@email.com"
                   value={newsletterEmail}
-                  onChange={(e) => {
-                    setNewsletterEmail(e.target.value);
-                    setNewsletterError("");
-                  }}
-                  onKeyPress={(e) =>
-                    e.key === "Enter" && handleNewsletterSubscribe()
-                  }
-                  className={`flex-1 px-4 py-2 rounded-[10px] bg-[#f1ece8]/10 text-white text-sm focus:outline-none ${
-                    newsletterError ? "border border-red-500" : ""
-                  }`}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  required
+                  className="flex-1 px-4 py-2 rounded-[10px] bg-[#f1ece8]/10 text-white text-sm focus:outline-none"
                 />
-                {newsletterError && (
-                  <p className="text-red-400 text-xs font-montserrat">
-                    {newsletterError}
-                  </p>
-                )}
                 <button
-                  onClick={handleNewsletterSubscribe}
-                  className="px-6 py-2 bg-[#b66a3c] hover:bg-[#a85a2c] text-white rounded-lg font-medium text-sm transition-colors cursor-pointer"
+                  type="submit"
+                  disabled={state.submitting}
+                  className="px-6 py-2 bg-[#b66a3c] hover:bg-[#a85a2c] text-white rounded-lg font-medium text-sm transition-colors cursor-pointer disabled:opacity-50"
                 >
-                  Subscribe
+                  {state.submitting ? "Subscribing..." : "Subscribe"}
                 </button>
-              </div>
+              </form>
             )}
           </div>
 
@@ -183,48 +170,43 @@ const Footer = () => {
               <p className="text-[14px] font-montserrat text-[#f1ece8]/80 leading-[21px]    ">
                 Stay updated with our latest insights
               </p>
-              {isNewsletterSubscribed ? (
+              {state.succeeded ? (
                 <div className="p-3 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-sm font-montserrat">
                   ✓ You subscribed to our newsletter!
                 </div>
               ) : (
-                <div className="flex flex-col gap-2">
+                <form
+                  onSubmit={handleNewsletterSubmit}
+                  className="flex flex-col gap-2"
+                >
                   <div className="flex gap-2">
                     <input
                       type="email"
+                      name="email"
                       placeholder="your@email.com"
                       value={newsletterEmail}
-                      onChange={(e) => {
-                        setNewsletterEmail(e.target.value);
-                        setNewsletterError("");
-                      }}
-                      onKeyPress={(e) =>
-                        e.key === "Enter" && handleNewsletterSubscribe()
-                      }
-                      className={`w-[312px] h-[42px] px-4 py-2 rounded-[10px] bg-[#f1ece8]/10 text-white text-sm focus:outline-none ${
-                        newsletterError ? "border border-red-500" : ""
-                      }`}
+                      onChange={(e) => setNewsletterEmail(e.target.value)}
+                      required
+                      className="w-[312px] h-[42px] px-4 py-2 rounded-[10px] bg-[#f1ece8]/10 text-white text-sm focus:outline-none"
                     />
                     <button
-                      onClick={handleNewsletterSubscribe}
-                      className="px-6 py-2 bg-[#b66a3c] cursor-pointer hover:bg-[#a85a2c] text-white font-montserrat text-[16px] leading-[24px] rounded-lg text-sm transition-colors"
+                      type="submit"
+                      disabled={state.submitting}
+                      className="px-6 py-2 bg-[#b66a3c] cursor-pointer hover:bg-[#a85a2c] text-white font-montserrat text-[16px] leading-[24px] rounded-lg text-sm transition-colors disabled:opacity-50"
                     >
-                      Subscribe
+                      {state.submitting ? "Subscribing..." : "Subscribe"}
                     </button>
                   </div>
-                  {newsletterError && (
-                    <p className="text-red-400 text-xs font-montserrat">
-                      {newsletterError}
-                    </p>
-                  )}
-                </div>
+                </form>
               )}
             </div>
 
             {/* Social Links */}
             <div className="flex  gap-4 pt-4">
               <Link
-                href="#"
+                href="https://www.linkedin.com/in/christophe-core-aa54759/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className=" w-[40px] h-[40px]  border-[#f1ece8]/20  hover:border-[#b66a3c]    transition-colors border px-2 py-2 rounded-full"
               >
                 <Image
@@ -234,17 +216,7 @@ const Footer = () => {
                   height={20}
                 />
               </Link>
-              <Link
-                href="#"
-                className=" w-[40px] h-[40px]  border-[#f1ece8]/20  hover:border-[#b66a3c]    transition-colors border px-2 py-2 rounded-full"
-              >
-                <Image
-                  src="/twitter.png"
-                  alt="Twitter"
-                  width={20}
-                  height={20}
-                />
-              </Link>
+
               <Link
                 href="mailto:contact@core.investments"
                 className=" w-[40px] h-[40px]  border-[#f1ece8]/20 hover:border-[#b66a3c]   transition-colors border px-2 py-2 rounded-full"
