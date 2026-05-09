@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 
 const MessageSection = () => {
@@ -36,7 +35,7 @@ const MessageSection = () => {
 
             <div className="relative rounded-2xl p-8 sm:p-10 w-full flex-1 overflow-hidden">
               <Image
-                src="/bg1.png"
+                src="/christophe-2.png"
                 alt="Background"
                 fill
                 className="absolute inset-0 object-cover"
